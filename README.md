@@ -35,8 +35,13 @@ Para rodar este projeto localmente, siga os passos abaixo:
    npm start
 O aplicativo estará disponível em http://localhost:3000.
 
+5. Para rodar os testes unitários:
+   ```bash
+   npm test
+
 ## Arquivos Principais
 - **ConverterForm**: *Componente que contém o formulário de conversão de moedas. Ele inclui campos de entrada para o valor, seletores de moedas e um botão de inversão. Localizado em: "src/components/ConverterForm.tsx"*
 - **useCurrency:** *Hook customizado que gerencia o estado e a lógica de conversão de moedas. Localizado em: "src/hooks/useCurrency.ts"*
 - **exchangeRates:** *Contém as taxas de câmbio utilizadas para a conversão de moedas (atualize este objeto para alterar valores ou adicionar/excluir moedas). Localizado em: "src/data/exchangeRates.json"*
+- **ConverterForm.test:** *Contém arquivos de testes para os componentes*
 
