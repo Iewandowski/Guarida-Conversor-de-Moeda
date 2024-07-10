@@ -1,6 +1,6 @@
 # Conversor de Moedas
 
-Um simples aplicativo de conversão de moedas desenvolvido em React.
+Conversor de moedas desenvolvido em React/Typescript.
 
 ## Visão Geral
 
@@ -17,3 +17,7 @@ Este projeto é um conversor de moedas que permite aos usuários converter valor
 ## Instalação
 
 Para rodar este projeto localmente, siga os passos abaixo:
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/Iewandowski/Guarida-Conversor-de-Moeda.git
