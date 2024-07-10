@@ -1,0 +1,124 @@
+body, html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.home img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.converter-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.converter-form input,
+.converter-form select {
+  width: 100%; 
+  padding: 12px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.converter-form select {
+  appearance: none;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12.586L5.707 8.293a1 1 0 0 1 1.414-1.414L10 10.172l3.879-3.293a1 1 0 0 1 1.414 1.414L10 12.586z" fill="%2500" /></svg>'); /* Ícone de seta para baixo */
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  cursor: pointer;
+}
+
+.converter-form select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(228, 4, 99, 0.5);
+}
+
+.converter-form .button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.converter-form .invert-button,
+.converter-form .convert-button {
+  flex: 1;
+  background-color: #e40463;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  height: 45px;
+}
+
+.converter-form .invert-button:hover,
+.converter-form .convert-button:hover {
+  background-color: #44021d;
+}
+
+.converter-form .converted-amount {
+  margin-top: 12px;
+  font-size: 1rem;
+  text-align: center;
+  color: #666;
+}
+
+.converter-form .converted-amount .converted-value {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #e40463;
+  margin-left: 5px;
+}
+
+@media (max-width: 500px) {
+  .converter-form {
+    max-width: 100%;
+  }
+
+  .converter-form .button-group {
+    flex-direction: column;
+  }
+
+  .converter-form .invert-button,
+  .converter-form .convert-button {
+    width: 10%;
+    margin-top: 0.1px;
+    padding: 2px 2px;
+    height: 40px;
+  }
+}
