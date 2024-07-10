@@ -21,3 +21,16 @@ Para rodar este projeto localmente, siga os passos abaixo:
 
    ```bash
    git clone https://github.com/Iewandowski/Guarida-Conversor-de-Moeda.git
+2. Navegue até o diretório do projeto:
+
+   ```bash
+   cd .\currency-converter\
+
+3. Instale as dependências:
+   ```bash
+   npm install
+
+4. Inicie o servidor de desenvolvimento local
+   ```bash
+   npm start
+O aplicativo estará disponível em http://localhost:3000.
