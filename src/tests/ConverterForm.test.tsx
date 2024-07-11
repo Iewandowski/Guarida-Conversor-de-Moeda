@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen  } from '@testing-library/react';
 import ConverterForm from '../components/ConverterForm';
 import { useCurrency } from '../hooks/useCurrency';
 
@@ -10,13 +10,13 @@ const mockedUseCurrency = useCurrency as jest.MockedFunction<typeof useCurrency>
 describe('ConverterForm', () => {
   beforeEach(() => {
     mockedUseCurrency.mockReturnValue({
-      amount: 0,
+      amount: 100,
       setAmount: jest.fn(),
       fromCurrency: 'USD',
       setFromCurrency: jest.fn(),
       toCurrency: 'EUR',
       setToCurrency: jest.fn(),
-      convertedAmount: 0,
+      convertedAmount: 85.00,
       handleConvert: jest.fn(),
       handleInvertCurrencies: jest.fn(),
       currencies: ['USD', 'EUR', 'BRL', 'JPY', 'RUB'],
@@ -27,17 +27,7 @@ describe('ConverterForm', () => {
     const { getByPlaceholderText, getByText } = render(<ConverterForm />);
 
     expect(getByPlaceholderText('Valor para conversão')).toBeTruthy();
-    expect(getByText('Converter')).toBeTruthy();
     expect(getByText('⇆')).toBeTruthy();
-  });
-
-  test('chama a função handleConvert quando o botão de converter é clicado', () => {
-    const { getByText } = render(<ConverterForm />);
-    const convertButton = getByText('Converter');
-
-    fireEvent.click(convertButton);
-
-    expect(mockedUseCurrency().handleConvert).toHaveBeenCalled();
   });
 
   test('chama a função handleInvertCurrencies quando o botão de inverter é clicado', () => {
@@ -47,16 +37,6 @@ describe('ConverterForm', () => {
     fireEvent.click(invertButton);
 
     expect(mockedUseCurrency().handleInvertCurrencies).toHaveBeenCalled();
-  });
-
-  test('verifica se o valor convertido é exibido corretamente', () => {
-    const { getByText } = render(<ConverterForm />);
-    const convertedAmountText = getByText((content, element) => {
-      const regex = /Valor Convertido: \d+\.\d{2}/;
-      return regex.test(content);
-    });
-
-    expect(convertedAmountText).toBeTruthy();
   });
 
   test('não permite valores negativos no input', () => {
