@@ -24,7 +24,7 @@ Para rodar este projeto localmente, siga os passos abaixo:
 2. Navegue até o diretório do projeto:
 
    ```bash
-   cd .\currency-converter\
+   cd .\Guarida-Conversor-de-Moeda\
 
 3. Instale as dependências:
    ```bash
